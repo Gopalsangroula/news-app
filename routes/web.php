@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,10 @@ Route::get('/', function () {
     return view('frontend.welcome');
 });
 
+Route::prefix('admin')->group(function () {
+    Route::get('/posts', [PostController::class, 'index']);
+    Route::get('/', [AdminController::class, 'index']);
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
