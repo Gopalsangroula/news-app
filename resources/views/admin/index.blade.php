@@ -1,32 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-2">
-            <div class="card">
+        <div class="col-md-1">
+            <div class="col-nav-card">
                 <div class="card-body">
-                    <ul class="nav flex-column">
+                    <ul class="nav flex-column admin-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Active</a>
+                            <a class="nav-link active" aria-current="page" href="{{ url('/admin') }}">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="{{ url('/admin/posts') }}">All Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="{{ url('/admin/add-post') }}">Add Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
+                            <a class="nav-link"  href="{{ route('login') }}">Medai</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">All User</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Add User</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Advertisement</a>
+                        </li>
+
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-11">
             <div class="card">
                 <div class="card-body">
-                    <h2>Hello sir</h2>
+                    @yield('AdminContent')
                 </div>
             </div>
         </div>

@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tag;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
-class TagController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function index()
     {
-        //
+       return view('admin.post.index');
     }
 
     /**
@@ -24,7 +29,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.post.addpost');
     }
 
     /**
@@ -41,10 +46,10 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show(Post $post)
     {
         //
     }
@@ -52,10 +57,10 @@ class TagController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tag $tag)
+    public function edit(Post $post)
     {
         //
     }
@@ -64,10 +69,10 @@ class TagController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tag $tag)
+    public function update(Request $request, Post $post)
     {
         //
     }
@@ -75,10 +80,10 @@ class TagController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tag  $tag
+     * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tag $tag)
+    public function destroy(Post $post)
     {
         //
     }

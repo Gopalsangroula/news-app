@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +22,19 @@ Route::get('/', function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('/posts', [PostController::class, 'index']);
+    Route::get('/add-post', [PostController::class, 'create']);
     Route::get('/', [AdminController::class, 'index']);
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 });
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//     \UniSharp\LaravelFilemanager\Lfm::routes();
+// });
+Route::group(['prefix' => 'admin/laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
+// Route::group(['prefix' => 'admin/laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//     \UniSharp\LaravelFilemanager\Lfm::routes();
+// });

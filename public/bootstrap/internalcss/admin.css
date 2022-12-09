@@ -1,0 +1,63 @@
+*{
+    font-family: 'Lato', sans-serif;
+}
+.admin-nav .nav-link{
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    color: #333;   
+}
+.ah-admin-post-title{
+    font-weight: 500;
+    margin-right: 15px;
+}
+.ah-post-btnPub{
+    color: #fff !important;
+    align-items: center !important;
+    font-weight: 600 !important;
+}
+.ah-post-btn{
+    display: flex !important;
+    align-items: center !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+}
+.ah-post-btn:hover{
+    transition: all .3s ease 0s;
+    color: rgb(245, 245, 245) !important;
+}
+.separator{
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.ah-status-nav{
+    margin-top: 15px;
+}
+.ah-status-nav .nav-link{
+    border-right: 1px solid #ddd;
+    font-weight: 500;
+    color: #333;
+    padding: 0px 15px;
+}
+.ad-admin-title{
+    font-size: 16px;
+}
+.ah-tablerow td{
+    font-weight: 600;
+}
+.form-control{
+    background-color: #fff !important;
+}
+.ah-admin-lable-title{
+    font-size: 18px;
+    font-weight: 500;
+}
+@media (max-width: 640px) {
+    .ah-sm{
+        display: none;
+    }
+    .ah-tablerow{
+        display: flex;
+    }
+}
